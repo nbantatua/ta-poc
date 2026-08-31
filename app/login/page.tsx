@@ -67,7 +67,7 @@ export default function LoginPage() {
             <Ticket className="w-8 h-8 text-blue-400" />
           </div>
           <h1 className="text-3xl font-black tracking-wider text-white flex items-center gap-2">
-            TA-POC <span className="text-xs bg-blue-500/20 text-blue-400 border border-blue-500/30 px-2 py-0.5 rounded font-mono">2024 POS</span>
+            TA-POC <span className="text-xs bg-blue-500/20 text-blue-400 border border-blue-500/30 px-2 py-0.5 rounded font-mono">TBMS 2026</span>
           </h1>
           <p className="text-xs text-gray-400 mt-1 uppercase tracking-widest font-mono">
             Ticket Broker Broker Management System
@@ -135,7 +135,7 @@ export default function LoginPage() {
       </div>
 
       <footer className="mt-8 text-center text-xs text-gray-600 font-mono">
-        TA-POC Ticket Broker Workflow Architecture &copy; 2024
+        TA-POC - Ticket Broker Management System &copy; 2026
       </footer>
     </div>
   );

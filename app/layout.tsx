@@ -2,8 +2,8 @@ import type { Metadata } from "next";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  title: "TA-POC | Ticket Broker Broker POS 2024",
-  description: "Ticketing Broker Management System Proof of Concept inspired by 2024 Ticket Broker workflow",
+  title: "TA-POC | Ticket Broker MS 2026",
+  description: "Ticketing Broker Management System Proof of Concept",
 };
 
 export default function RootLayout({
