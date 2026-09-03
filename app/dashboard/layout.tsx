@@ -57,6 +57,11 @@ export default function DashboardLayout({ children }: { children: React.ReactNod
           title: 'Stage 3: Profit Analyzer & Financial ROI Dashboard',
           subtitle: 'Capital deployment log, gross revenue payout streams, 15% marketplace commission deduction & ROI',
         };
+      case '/dashboard/settings':
+        return {
+          title: 'Account Settings',
+          subtitle: 'Broker profile, marketplace credentials, financial defaults & notification preferences',
+        };
       default:
         return {
           title: 'Master Broker Overview',

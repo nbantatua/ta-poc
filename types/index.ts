@@ -73,3 +73,35 @@ export interface AutomationLog {
   totalDelta: number;
   details: string[];
 }
+
+export interface BrokerAccount {
+  id?: number;
+  businessName: string;
+  ownerName: string;
+  email: string;
+  phone: string;
+  businessAddress: string;
+  city: string;
+  state: string;
+  zipCode: string;
+  taxId: string; // EIN or SSN for tax reporting
+  licenseNumber?: string; // State broker license if applicable
+
+  // Marketplace API Credentials (encrypted in production)
+  stubhubApiKey?: string;
+  vividseatsApiKey?: string;
+  seatgeekApiKey?: string;
+  ticketmasterApiKey?: string;
+
+  // Financial Settings
+  defaultCommissionRate: number; // Default 0.15
+  minimumMarginPercent: number; // Default 0.10 (10%)
+
+  // Notification Preferences
+  emailNotifications: boolean;
+  smsNotifications: boolean;
+
+  // Timestamps
+  createdAt: string;
+  updatedAt: string;
+}

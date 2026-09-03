@@ -14,6 +14,7 @@ import {
   Zap,
   CheckCircle2,
   Lock,
+  Settings,
 } from 'lucide-react';
 
 interface SidebarProps {
@@ -129,8 +130,18 @@ export default function Sidebar({ onLockScreen }: SidebarProps) {
         </div>
       </div>
 
-      {/* Footer Lock Control */}
-      <div className="p-3 border-t border-gray-800 bg-gray-950">
+      {/* Footer Section */}
+      <div className="p-3 border-t border-gray-800 bg-gray-950 space-y-2">
+        {/* Account Settings Button */}
+        <Link
+          href="/dashboard/settings"
+          className="w-full flex items-center justify-center gap-2 bg-gray-900 hover:bg-gray-800 border border-gray-800 hover:border-blue-500/30 text-gray-300 hover:text-blue-400 text-xs font-mono py-2 rounded-lg transition"
+        >
+          <Settings className="w-3.5 h-3.5" />
+          <span>Account Settings</span>
+        </Link>
+
+        {/* Lock Terminal Button */}
         <button
           onClick={onLockScreen}
           className="w-full flex items-center justify-center gap-2 bg-gray-900 hover:bg-red-500/10 border border-gray-800 hover:border-red-500/30 text-gray-300 hover:text-red-400 text-xs font-mono py-2 rounded-lg transition"

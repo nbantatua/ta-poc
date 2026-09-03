@@ -1,10 +1,11 @@
 import Dexie, { type Table } from 'dexie';
-import { InventoryItem, Order, PricingRule } from '../types';
+import { InventoryItem, Order, PricingRule, BrokerAccount } from '../types';
 
 export class TicketBrokerDB extends Dexie {
   inventory!: Table<InventoryItem, number>;
   orders!: Table<Order, number>;
   pricingRules!: Table<PricingRule, number>;
+  brokerAccount!: Table<BrokerAccount, number>;
 
   constructor() {
     super('TicketBroker_DB');
@@ -13,6 +14,7 @@ export class TicketBrokerDB extends Dexie {
       inventory: '++id, eventName, category, eventDate, venue, section, row, status, specListing',
       orders: '++id, inventoryId, orderNumber, marketplace, orderDate, fulfillmentStatus',
       pricingRules: '++id, name, isActive',
+      brokerAccount: '++id, email',
     });
   }
 }
@@ -604,5 +606,27 @@ export async function initDatabase() {
     ]);
 
     console.log('[Dexie] Database populated successfully.');
+  }
+
+  // Seed broker account
+  const accountCount = await db.brokerAccount.count();
+  if (accountCount === 0) {
+    await db.brokerAccount.add({
+      businessName: 'Demo Ticket Broker LLC',
+      ownerName: 'John Broker',
+      email: 'broker@example.com',
+      phone: '(555) 123-4567',
+      businessAddress: '123 Main Street',
+      city: 'New York',
+      state: 'NY',
+      zipCode: '10001',
+      taxId: '**-***1234',
+      defaultCommissionRate: 0.15,
+      minimumMarginPercent: 0.10,
+      emailNotifications: true,
+      smsNotifications: false,
+      createdAt: new Date().toISOString(),
+      updatedAt: new Date().toISOString(),
+    });
   }
 }
